@@ -1,0 +1,29 @@
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# cat -> Pets.txt
+Собаки
+Кошки
+Хомяки
+^C
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# cat -> PackAnimals.txt
+Лошади
+Верблюды
+Ослы
+^C
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# cat Pets.txt
+Собаки
+Кошки
+Хомяки
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# cat PackAnimals.txt
+Лошади
+Верблюды
+Ослы
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# cat Pets.txt PackAnimals.txt > HumanFriends.txt
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# cat HumanFriends.txt
+Собаки
+Кошки
+Хомяки
+Лошади
+Верблюды
+Ослы
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# ls
+HumanFriends.txt  PackAnimals.txt  Pets.txt
+root@gb-VirtualBox:/home/gb/programmer-block/final-work#
