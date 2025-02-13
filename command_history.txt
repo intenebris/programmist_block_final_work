@@ -27,3 +27,278 @@ root@gb-VirtualBox:/home/gb/programmer-block/final-work# cat HumanFriends.txt
 root@gb-VirtualBox:/home/gb/programmer-block/final-work# ls
 HumanFriends.txt  PackAnimals.txt  Pets.txt
 root@gb-VirtualBox:/home/gb/programmer-block/final-work#
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# mkdir new-dir
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# ls
+HumanFriends.txt  new-dir  PackAnimals.txt  Pets.txt
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# mv HumanFriends.txt ../new-dir/
+mv: cannot move 'HumanFriends.txt' to '../new-dir/': Not a directory
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# mv HumanFriends.txt new-dir/
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# ls
+new-dir  PackAnimals.txt  Pets.txt
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# cd new-dir/
+root@gb-VirtualBox:/home/gb/programmer-block/final-work/new-dir# ls
+HumanFriends.txt
+root@gb-VirtualBox:/home/gb/programmer-block/final-work/new-dir#
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# wget https://dev.mysql.com/get/mysql-apt-config_0.8.28-1_all.deb
+--2025-02-13 19:10:27--  https://dev.mysql.com/get/mysql-apt-config_0.8.28-1_all.deb
+Resolving dev.mysql.com (dev.mysql.com)... 23.211.74.232, 2a02:26f0:3780:297::2e31, 2a02:26f0:3780:29d::2e31
+Connecting to dev.mysql.com (dev.mysql.com)|23.211.74.232|:443... connected.
+HTTP request sent, awaiting response... 302 Moved Temporarily
+Location: https://repo.mysql.com//mysql-apt-config_0.8.28-1_all.deb [following]
+--2025-02-13 19:10:28--  https://repo.mysql.com//mysql-apt-config_0.8.28-1_all.deb
+Resolving repo.mysql.com (repo.mysql.com)... 23.201.251.190, 2a02:26f0:480:783::1d68, 2a02:26f0:480:787::1d68
+Connecting to repo.mysql.com (repo.mysql.com)|23.201.251.190|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 18124 (18K) [application/x-debian-package]
+Saving to: ‘mysql-apt-config_0.8.28-1_all.deb’
+
+mysql-apt-config_0.8.28-1_all 100%[=================================================>]  17,70K  --.-KB/s    in 0s
+
+2025-02-13 19:10:28 (49,0 MB/s) - ‘mysql-apt-config_0.8.28-1_all.deb’ saved [18124/18124]
+
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# dpkg -i mysql-apt-config_0.8.28-1_all.deb
+Selecting previously unselected package mysql-apt-config.
+(Reading database ... 201026 files and directories currently installed.)
+Preparing to unpack mysql-apt-config_0.8.28-1_all.deb ...
+Unpacking mysql-apt-config (0.8.28-1) ...
+Setting up mysql-apt-config (0.8.28-1) ...
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# apt update & upgrade
+[1] 15670
+upgrade: command not found
+Hit:1 http://ru.archive.ubuntu.com/ubuntu jammy InRelease
+Get:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+Ign:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease
+Get:3 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+Ign:3 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease
+Get:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+Ign:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Err:1 http://ru.archive.ubuntu.com/ubuntu jammy InRelease
+  Splitting up /var/lib/apt/lists/ru.archive.ubuntu.com_ubuntu_dists_jammy_InRelease into data and signature failed
+Hit:5 https://download.docker.com/linux/ubuntu bionic InRelease
+Err:5 https://download.docker.com/linux/ubuntu bionic InRelease
+  Splitting up /var/lib/apt/lists/download.docker.com_linux_ubuntu_dists_bionic_InRelease into data and signature failed
+Get:6 https://download.docker.com/linux/ubuntu jammy InRelease [48,8 kB]
+Ign:6 https://download.docker.com/linux/ubuntu jammy InRelease
+Get:7 https://dl.google.com/linux/chrome/deb stable InRelease [1 825 B]
+Ign:7 https://dl.google.com/linux/chrome/deb stable InRelease
+Hit:8 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
+Err:8 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease
+  Splitting up /var/lib/apt/lists/ppa.launchpadcontent.net_ondrej_php_ubuntu_dists_jammy_InRelease into data and signature failed
+Get:9 http://repo.mysql.com/apt/ubuntu jammy InRelease [25,1 kB]
+Ign:9 http://repo.mysql.com/apt/ubuntu jammy InRelease
+Hit:10 https://download.virtualbox.org/virtualbox/debian jammy InRelease
+Err:10 https://download.virtualbox.org/virtualbox/debian jammy InRelease
+  Splitting up /var/lib/apt/lists/download.virtualbox.org_virtualbox_debian_dists_jammy_InRelease into data and signature failed
+Get:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+Ign:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease
+Get:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+Ign:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Get:3 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+Ign:3 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease
+Get:6 https://download.docker.com/linux/ubuntu jammy InRelease [48,8 kB]
+Ign:6 https://download.docker.com/linux/ubuntu jammy InRelease
+Get:7 https://dl.google.com/linux/chrome/deb stable InRelease [1 825 B]
+Ign:7 https://dl.google.com/linux/chrome/deb stable InRelease
+Get:9 http://repo.mysql.com/apt/ubuntu jammy InRelease [25,1 kB]
+Ign:9 http://repo.mysql.com/apt/ubuntu jammy InRelease
+Get:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+Ign:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease
+Get:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+Ign:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Get:3 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+Ign:3 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease
+Get:6 https://download.docker.com/linux/ubuntu jammy InRelease [48,8 kB]
+Ign:6 https://download.docker.com/linux/ubuntu jammy InRelease
+Get:7 https://dl.google.com/linux/chrome/deb stable InRelease [1 825 B]
+Ign:7 https://dl.google.com/linux/chrome/deb stable InRelease
+Get:9 http://repo.mysql.com/apt/ubuntu jammy InRelease [25,1 kB]
+Ign:9 http://repo.mysql.com/apt/ubuntu jammy InRelease
+Get:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+Err:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease
+  Error writing to file - write (28: No space left on device) [IP: 213.180.204.183 80]
+Get:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+Err:4 http://security.ubuntu.com/ubuntu jammy-security InRelease
+  Error writing to file - write (28: No space left on device) [IP: 185.125.190.82 80]
+Get:3 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+Err:3 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease
+  Error writing to file - write (28: No space left on device) [IP: 213.180.204.183 80]
+Get:6 https://download.docker.com/linux/ubuntu jammy InRelease [48,8 kB]
+Err:6 https://download.docker.com/linux/ubuntu jammy InRelease
+  Error writing to file - write (28: No space left on device) [IP: 3.164.206.5 443]
+Get:7 https://dl.google.com/linux/chrome/deb stable InRelease [1 825 B]
+Err:7 https://dl.google.com/linux/chrome/deb stable InRelease
+  Error writing to file - write (28: No space left on device) [IP: 209.85.233.136 443]
+Get:9 http://repo.mysql.com/apt/ubuntu jammy InRelease [25,1 kB]
+Err:9 http://repo.mysql.com/apt/ubuntu jammy InRelease
+  Error writing to file - write (28: No space left on device) [IP: 104.82.109.86 80]
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+120 packages can be upgraded. Run 'apt list --upgradable' to see them.
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: http://ru.archive.ubuntu.com/ubuntu jammy InRelease: Splitting up /var/lib/apt/lists/ru.archive.ubuntu.com_ubuntu_dists_jammy_InRelease into data and signature failed
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://download.docker.com/linux/ubuntu bionic InRelease: Splitting up /var/lib/apt/lists/download.docker.com_linux_ubuntu_dists_bionic_InRelease into data and signature failed
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy InRelease: Splitting up /var/lib/apt/lists/ppa.launchpadcontent.net_ondrej_php_ubuntu_dists_jammy_InRelease into data and signature failed
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://download.virtualbox.org/virtualbox/debian jammy InRelease: Splitting up /var/lib/apt/lists/download.virtualbox.org_virtualbox_debian_dists_jammy_InRelease into data and signature failed
+W: Failed to fetch http://ru.archive.ubuntu.com/ubuntu/dists/jammy/InRelease  Splitting up /var/lib/apt/lists/ru.archive.ubuntu.com_ubuntu_dists_jammy_InRelease into data and signature failed
+W: Failed to fetch http://ru.archive.ubuntu.com/ubuntu/dists/jammy-updates/InRelease  Error writing to file - write (28: No space left on device) [IP: 213.180.204.183 80]
+W: Failed to fetch http://ru.archive.ubuntu.com/ubuntu/dists/jammy-backports/InRelease  Error writing to file - write (28: No space left on device) [IP: 213.180.204.183 80]
+W: Failed to fetch http://security.ubuntu.com/ubuntu/dists/jammy-security/InRelease  Error writing to file - write (28: No space left on device) [IP: 185.125.190.82 80]
+W: Failed to fetch https://download.docker.com/linux/ubuntu/dists/bionic/InRelease  Splitting up /var/lib/apt/lists/download.docker.com_linux_ubuntu_dists_bionic_InRelease into data and signature failed
+W: Failed to fetch https://download.docker.com/linux/ubuntu/dists/jammy/InRelease  Error writing to file - write (28: No space left on device) [IP: 3.164.206.5 443]
+W: Failed to fetch https://dl.google.com/linux/chrome/deb/dists/stable/InRelease  Error writing to file - write (28: No space left on device) [IP: 209.85.233.136 443]
+W: Failed to fetch http://repo.mysql.com/apt/ubuntu/dists/jammy/InRelease  Error writing to file - write (28: No space left on device) [IP: 104.82.109.86 80]
+W: Failed to fetch https://ppa.launchpadcontent.net/ondrej/php/ubuntu/dists/jammy/InRelease  Splitting up /var/lib/apt/lists/ppa.launchpadcontent.net_ondrej_php_ubuntu_dists_jammy_InRelease into data and signature failed
+W: Failed to fetch https://download.virtualbox.org/virtualbox/debian/dists/jammy/InRelease  Splitting up /var/lib/apt/lists/download.virtualbox.org_virtualbox_debian_dists_jammy_InRelease into data and signature failed
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+
+[1]+  Done                    apt update
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# apt install mysql-server
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  apache2-data apache2-utils
+Use 'sudo apt autoremove' to remove them.
+The following packages will be upgraded:
+  mysql-server
+1 upgraded, 0 newly installed, 0 to remove and 119 not upgraded.
+Need to get 9 460 B of archives.
+After this operation, 0 B of additional disk space will be used.
+E: You don't have enough free space in /var/cache/apt/archives/.
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# apt install mysql-client
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  apache2-data apache2-utils
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  mysql-client
+0 upgraded, 1 newly installed, 0 to remove and 120 not upgraded.
+Need to get 9 352 B of archives.
+After this operation, 35,8 kB of additional disk space will be used.
+E: You don't have enough free space in /var/cache/apt/archives/.
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# docker images
+REPOSITORY              TAG       IMAGE ID       CREATED         SIZE
+docker_compose-db       latest    8680d923c937   2 months ago    410MB
+cowsaytest              latest    b251cf76cd05   2 months ago    128MB
+ubuntu                  24.10     bf21d82156ce   4 months ago    80.1MB
+adminer                 4.8.1     2f7580903a1d   6 months ago    250MB
+phpmyadmin/phpmyadmin   latest    933569f3a9f6   19 months ago   562MB
+phpmyadmin              latest    a590866d53f0   19 months ago   558MB
+mariadb                 10.8      d198cd11e8fc   20 months ago   370MB
+mariadb                 10.10.2   039bd724508b   2 years ago     410MB
+mysql                   8.0.31    7484689f290f   2 years ago     538MB
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# docker rmi 933569f3a9f6
+Untagged: phpmyadmin/phpmyadmin:latest
+Untagged: phpmyadmin/phpmyadmin@sha256:67ba2550fd004399ab0b95b64021a88ea544011e566a9a1995180a3decb6410d
+Deleted: sha256:933569f3a9f631d1867bc512beedf6d6fa25a5b3a2b2638d59fe2d6f18002db9
+Deleted: sha256:c062055a88d0ea3518803dad689de0fd1c4d0086e69468539775c648d84bf7fe
+Deleted: sha256:870f0d68a84119de6dc57a04bd3132f43b124abf818ba2a17fa66b41c3dc092f
+Deleted: sha256:61dc853717e0501da0b9c65f11ae6e127f1ca210762c3082d345057f95253965
+Deleted: sha256:5424c4cef91d2d09dcff6b97bfad52989c678f24004e7590ed132ba06ae55f33
+Deleted: sha256:75e4f26595fc2534d25bbf78883def4bdec63a3c149c170cf5dd065d55be532e
+Deleted: sha256:7ec99bb6c6b4a5175023c7ae70e5db97ef7ed898508c1d7e98fe2418db7bb98e
+Deleted: sha256:7926251c2e2e130aa77881944cb31fbb37eddf866cc5fa96e5f47377ca287883
+Deleted: sha256:1580eb456d79472e774e05a83caa4f0d317218412586415cdc7602460cfca8d7
+Deleted: sha256:467630ccf847f6858149fbe7b6d0b7fa17ae0586a02f6cdfec4dddc9e975175c
+Deleted: sha256:08710bc0f123cdae237fde29e6186bedc6bcc277b11cd5d7dad0d9b6a3efb770
+Deleted: sha256:fab16324ce2cbd32748fefcc9b4c6c2d39fc84ec1ee53b9b3f197a9d5dbe223c
+Deleted: sha256:ba5a9b206a46895d688ae2627889243519232776a6e68d2f2d2c0ef774ad63bc
+Deleted: sha256:e716f1303e515b9965493c2e76c4e0d5a7d448499f72d83f3e8a1a839e865044
+Deleted: sha256:7c960c6887bb7153723878976acc63aaf0e78c93994769397adc56df0379f7be
+Deleted: sha256:758105a8a221456937e20d794c72e88461a6a89eb42f9b1346337fcdc274ca9c
+Deleted: sha256:c9e443ef1d4319e2aa87ca7875be15c2f601290770936f1fee419d909970d8f9
+Deleted: sha256:4219c066cd8854aceb2eb63a5f76f86a9a815a9cbca7bb288fd9d9fd5e520ef1
+Deleted: sha256:24839d45ca455f36659219281e0f2304520b92347eb536ad5cc7b4dbb8163588
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# docker rmi d198cd11e8fc
+Untagged: mariadb:10.8
+Untagged: mariadb@sha256:456709ab146585d6189da05669b84384518baecd83670c9e5221f8c20a47cf1e
+Deleted: sha256:d198cd11e8fce9d331f9f90c93406eb8533399812b7946cbabf6242325e534e8
+Deleted: sha256:625166392dfd64d437dc33c0df475d36df2c7ae1322b4493453ae2326bfe525a
+Deleted: sha256:2074c746db89c132665f980b8138eaa62d3066fa2ab937feb2028a52b8b02c7b
+Deleted: sha256:2b447039993cc0cbd39f81b224548959d2a66aa9391e1210ff138cffa5aae14a
+Deleted: sha256:862e08614baf14b3a70e4d05b0f250014ff49b7eb0e22224b2b796df0e916207
+Deleted: sha256:161fcbe39e24efa8f649c0fca37e230821dce2b5eb3ed2b45e0196aecd51183c
+Deleted: sha256:b4c9ca4e1e132efbf68176a98777551027c89cca182b1416c459427c61aa5c8f
+Deleted: sha256:cf4669588596dad2da86c26bea5360c3b11340dd2f03faea1812417915eb4d28
+Deleted: sha256:966e94ab6e166fb358a208cfd8169d22dea352501c96700eb7f45092a2962ee6
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# docker images
+REPOSITORY          TAG       IMAGE ID       CREATED         SIZE
+docker_compose-db   latest    8680d923c937   2 months ago    410MB
+cowsaytest          latest    b251cf76cd05   2 months ago    128MB
+ubuntu              24.10     bf21d82156ce   4 months ago    80.1MB
+adminer             4.8.1     2f7580903a1d   6 months ago    250MB
+phpmyadmin          latest    a590866d53f0   19 months ago   558MB
+mariadb             10.10.2   039bd724508b   2 years ago     410MB
+mysql               8.0.31    7484689f290f   2 years ago     538MB
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# docker rmi a590866d53f0
+Error response from daemon: conflict: unable to delete a590866d53f0 (must be forced) - image is being used by stopped container 19045efe6cfd
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# docker rm 19045efe6cfd
+19045efe6cfd
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# docker rmi a590866d53f0
+Untagged: phpmyadmin:latest
+Untagged: phpmyadmin@sha256:3483eea0cdfe5a4a67cd1030f8e5f1cce291fcade2a8eb18fbec7f91c54d6bf1
+Deleted: sha256:a590866d53f0b7bac325705bc53c76c34cc9a13f70ac9661bbbc89df76552c45
+Deleted: sha256:8a09da4c70e8754e2b3a4f68c3a23d2e655bfec5925145aa8314f06419882dd0
+Deleted: sha256:7b2e93cfbfe3fdfa0139d95acfdfb7e554962923b6229a0a254574a0203c7ceb
+Deleted: sha256:55388f90599d11f69d437abe04d2a9eaef63a161c27a466a06b22548c587eeab
+Deleted: sha256:9957e5a8e641f452d6e398226cf27a5078995d0621b92a26a95fefec6f7de767
+Deleted: sha256:9b49484ceb4066e1d0e6ba1af22b93997729720fdbd11cbbf685906296dea6bc
+Deleted: sha256:266707017f395c3f65e0f8e874f6123d55d1bffa46d2edc5d8ca1089c53fa8b5
+Deleted: sha256:95c77a72f619f5184055c04f1b3a1162eeddb3573a8f24fe6beff435eb267e78
+Deleted: sha256:54b4097ae62e4417fc6e011bc27f10ca7ddb89d34441609d73117d04fb832a28
+Deleted: sha256:b8c7c1b25fbcbc9346f6835ccf72be98635b186a68cf8f1614d2676837a403ab
+Deleted: sha256:005f13e9f9867e7235e1dd3db51571dea76fd6ddca5625359b32497292f5e487
+Deleted: sha256:827178c20a7ff752ff91c217be368490d89297b448eb9c9d4e8adaacd3a08980
+Deleted: sha256:74155d1b58e201ecddd449c28d4ed20abe5fe883eea9393a8be081492868b4dd
+Deleted: sha256:dcd43c5363633e69bbd63b1847f1524f50761dd9ff56a5510af3cb3d7903e52c
+Deleted: sha256:64dc171fdb74913fb040adaf4837058ce392ed352bfa90473f5ed1a2551af6ac
+Deleted: sha256:ebd3ec312f14a4f06d54f30a0c7ccc8c4a590fa0cc8b683e62373f0537b0e664
+Deleted: sha256:1bab2d985f3667915c4490ecf4a6628cc4f9e438d1883e72d28a3df6f9af3e41
+Deleted: sha256:a84aeb8753f0dbea2da431403d09ce37c0558538a50d7d5fde1bc3053c255515
+Deleted: sha256:7364965b89b54bff6741d03ed0e0ca3a8b46de81e648b2aef7e267d76c507ca2
+Deleted: sha256:c0f1022b22a9b36851b358f44e5475e39d166e71a8073cf53c894a299239b1c5
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# apt install mysql-server
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  apache2-data apache2-utils
+Use 'sudo apt autoremove' to remove them.
+The following packages will be upgraded:
+  mysql-server
+1 upgraded, 0 newly installed, 0 to remove and 119 not upgraded.
+Need to get 9 460 B of archives.
+After this operation, 0 B of additional disk space will be used.
+Get:1 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mysql-server all 8.0.41-0ubuntu0.22.04.1 [9 460 B]
+Fetched 9 460 B in 0s (60,5 kB/s)
+(Reading database ... 201031 files and directories currently installed.)
+Preparing to unpack .../mysql-server_8.0.41-0ubuntu0.22.04.1_all.deb ...
+Unpacking mysql-server (8.0.41-0ubuntu0.22.04.1) over (8.0.40-0ubuntu0.22.04.1) ...
+Setting up mysql-server (8.0.41-0ubuntu0.22.04.1) ...
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# systemctl start mysql
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# systemctl enable mysql
+Synchronizing state of mysql.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable mysql
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# systemctl status mysql
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+     Active: active (running) since Thu 2025-02-13 19:28:11 MSK; 28s ago
+   Main PID: 17675 (mysqld)
+     Status: "Server is operational"
+      Tasks: 38 (limit: 2271)
+     Memory: 427.8M
+        CPU: 2.544s
+     CGroup: /system.slice/mysql.service
+             └─17675 /usr/sbin/mysqld
+
+фев 13 19:28:08 gb-VirtualBox systemd[1]: Starting MySQL Community Server...
+фев 13 19:28:11 gb-VirtualBox systemd[1]: Started MySQL Community Server.
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# ^C
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# systemctl disable mysql
+Synchronizing state of mysql.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install disable mysql
+Removed /etc/systemd/system/multi-user.target.wants/mysql.service.
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# systemctl stop mysql
+root@gb-VirtualBox:/home/gb/programmer-block/final-work#
