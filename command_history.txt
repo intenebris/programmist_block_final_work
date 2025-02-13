@@ -301,4 +301,47 @@ Synchronizing state of mysql.service with SysV service script with /lib/systemd/
 Executing: /lib/systemd/systemd-sysv-install disable mysql
 Removed /etc/systemd/system/multi-user.target.wants/mysql.service.
 root@gb-VirtualBox:/home/gb/programmer-block/final-work# systemctl stop mysql
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+--2025-02-13 20:12:48--  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+Resolving dl.google.com (dl.google.com)... 173.194.73.190, 173.194.73.93, 173.194.73.136, ...
+Connecting to dl.google.com (dl.google.com)|173.194.73.190|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 114042240 (109M) [application/x-debian-package]
+Saving to: ‘google-chrome-stable_current_amd64.deb’
+
+google-chrome-stable_current_ 100%[=================================================>] 108,76M  5,83MB/s    in 19s
+
+2025-02-13 20:13:07 (5,79 MB/s) - ‘google-chrome-stable_current_amd64.deb’ saved [114042240/114042240]
+
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# dpkg -i google-chrome-stable_current_amd64.deb
+(Reading database ... 201031 files and directories currently installed.)
+Preparing to unpack google-chrome-stable_current_amd64.deb ...
+Unpacking google-chrome-stable (133.0.6943.98-1) over (131.0.6778.139-1) ...
+Setting up google-chrome-stable (133.0.6943.98-1) ...
+Processing triggers for mailcap (3.70+nmu1ubuntu1) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu3) ...
+Processing triggers for desktop-file-utils (0.26-1ubuntu3) ...
+Processing triggers for man-db (2.10.2-1) ...
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# dpkg -l | grep google-chrome
+ii  google-chrome-stable                       133.0.6943.98-1                              amd64        The web browser from Google
+root@gb-VirtualBox:/home/gb/programmer-block/final-work# apt remove google-chrome-stable
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  apache2-data apache2-utils
+Use 'sudo apt autoremove' to remove them.
+The following packages will be REMOVED:
+  google-chrome-stable
+0 upgraded, 0 newly installed, 1 to remove and 118 not upgraded.
+After this operation, 373 MB disk space will be freed.
+Do you want to continue? [Y/n] y
+(Reading database ... 201031 files and directories currently installed.)
+Removing google-chrome-stable (133.0.6943.98-1) ...
+update-alternatives: using /usr/bin/firefox to provide /usr/bin/x-www-browser (x-www-browser) in auto mode
+update-alternatives: using /usr/bin/firefox to provide /usr/bin/gnome-www-browser (gnome-www-browser) in auto mode
+Processing triggers for gnome-menus (3.36.0-1ubuntu3) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for mailcap (3.70+nmu1ubuntu1) ...
+Processing triggers for desktop-file-utils (0.26-1ubuntu3) ...
 root@gb-VirtualBox:/home/gb/programmer-block/final-work#
