@@ -55,7 +55,7 @@ ii  google-chrome-stable                       133.0.6943.98-1                  
 ```
 Далее пакет был удален при помощи команды `apt remove google-chrome-stable`
 
-5. *История команд в терминале Ubuntu*
+5. **История команд в терминале Ubuntu**
 
 Вся история команд по выполнению заданий текущего блока сохранена в файле [command_history.txt](command_history.txt) в корневом каталоге репозитория.
 
@@ -70,6 +70,42 @@ ii  google-chrome-stable                       133.0.6943.98-1                  
 
 7. **Работа с MySQL**
 
+Была создана БД *Human_Friends* и таблицы с разными категориями животных.
+```
+CREATE DATABASE Human_Friends;
+USE Human_Friends;
+	CREATE TABLE Pets (
+	ID INT AUTO_INCREMENT PRIMARY KEY,
+	Name VARCHAR(100) NOT NULL,
+	Type VARCHAR(50) NOT NULL,
+	BirthDate DATE NOT NULL,
+	Commands TEXT
+);
+CREATE TABLE Horses (
+	CREATE TABLE Pets (
+	ID INT AUTO_INCREMENT PRIMARY KEY,
+	Name VARCHAR(100) NOT NULL,
+	Type VARCHAR(50) NOT NULL,
+	BirthDate DATE NOT NULL,
+	Commands TEXT
+);
+CREATE TABLE Camels (
+	CREATE TABLE Pets (
+	ID INT AUTO_INCREMENT PRIMARY KEY,
+	Name VARCHAR(100) NOT NULL,
+	Type VARCHAR(50) NOT NULL,
+	BirthDate DATE NOT NULL,
+	Commands TEXT
+);
+CREATE TABLE Donkeys (
+	CREATE TABLE Pets (
+	ID INT AUTO_INCREMENT PRIMARY KEY,
+	Name VARCHAR(100) NOT NULL,
+	Type VARCHAR(50) NOT NULL,
+	BirthDate DATE NOT NULL,
+	Commands TEXT
+);
+```
 
 8. **ООП и Java**
 
