@@ -74,7 +74,7 @@ ii  google-chrome-stable                       133.0.6943.98-1                  
 ```
 CREATE DATABASE Human_Friends;
 USE Human_Friends;
-	CREATE TABLE Pets (
+CREATE TABLE Pets (
 	ID INT AUTO_INCREMENT PRIMARY KEY,
 	Name VARCHAR(100) NOT NULL,
 	Type VARCHAR(50) NOT NULL,
@@ -82,7 +82,6 @@ USE Human_Friends;
 	Commands TEXT
 );
 CREATE TABLE Horses (
-	CREATE TABLE Pets (
 	ID INT AUTO_INCREMENT PRIMARY KEY,
 	Name VARCHAR(100) NOT NULL,
 	Type VARCHAR(50) NOT NULL,
@@ -90,7 +89,6 @@ CREATE TABLE Horses (
 	Commands TEXT
 );
 CREATE TABLE Camels (
-	CREATE TABLE Pets (
 	ID INT AUTO_INCREMENT PRIMARY KEY,
 	Name VARCHAR(100) NOT NULL,
 	Type VARCHAR(50) NOT NULL,
@@ -98,7 +96,6 @@ CREATE TABLE Camels (
 	Commands TEXT
 );
 CREATE TABLE Donkeys (
-	CREATE TABLE Pets (
 	ID INT AUTO_INCREMENT PRIMARY KEY,
 	Name VARCHAR(100) NOT NULL,
 	Type VARCHAR(50) NOT NULL,
