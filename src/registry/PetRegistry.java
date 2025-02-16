@@ -4,6 +4,7 @@ import model.Pet;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class PetRegistry {
     private ArrayList<Pet> pets;
@@ -35,5 +36,12 @@ public class PetRegistry {
             }
         }
         return null;
+    }
+
+    // Метод для сортировки питомцев по дате рождения
+    public ArrayList<Pet> getPetsSortedByBirthDate() {
+        ArrayList<Pet> sortedPets = new ArrayList<>(pets);
+        sortedPets.sort(Comparator.comparing(Pet::getBirthDate));
+        return sortedPets;
     }
 }

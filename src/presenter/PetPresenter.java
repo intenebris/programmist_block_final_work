@@ -49,6 +49,18 @@ public class PetPresenter {
                     }
                     break;
                 case 6:
+                    int idToShowCommands = view.getPetId();
+                    Pet petToShowCommands = registry.getPetById(idToShowCommands);
+                    if (petToShowCommands != null) {
+                        view.showPetCommands(petToShowCommands.getCommands());
+                    } else {
+                        view.showMessage("Питомец с таким ID не найден!");
+                    }
+                    break;
+                case 7:
+                    view.showAllPets(registry.getPetsSortedByBirthDate());
+                    break;
+                case 8:
                     return;
                 default:
                     view.showMessage("Неверный выбор!");

@@ -18,7 +18,9 @@ public class PetView {
         System.out.println("3. Показать всех питомцев");
         System.out.println("4. Показать количество питомцев");
         System.out.println("5. Добавить команду питомцу");
-        System.out.println("6. Выйти");
+        System.out.println("6. Показать команды питомца");
+        System.out.println("7. Показать всех питомцев по дате рождения");
+        System.out.println("8. Выйти");
     }
 
     public int getMenuChoice() {
@@ -60,5 +62,16 @@ public class PetView {
 
     public void showMessage(String message) {
         System.out.println(message);
+    }
+
+    public void showPetCommands(ArrayList<String> commands) {
+        if (commands.isEmpty()) {
+            System.out.println("У питомца нет команд.");
+        } else {
+            System.out.println("Команды питомца:");
+            for (String command : commands) {
+                System.out.println("- " + command);
+            }
+        }
     }
 }
