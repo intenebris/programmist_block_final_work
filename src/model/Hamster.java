@@ -1,14 +1,12 @@
 package model;
 
-import java.util.Date;
-
-public class Hamster extends Pet{
-    public Hamster (String id, String name, String birthDate, String type) {
-        super(id, name, birthDate, type);
+public class Hamster extends Pet {
+    public Hamster(int id, String name, String birthDate) {
+        super(id, name, birthDate);
     }
 
     @Override
-    public String getType() {
-        return "хомяк";
+    public String getCategory() {
+        return "Хомяк";
     }
 }

@@ -1,23 +1,23 @@
 package model;
 
+import java.awt.*;
 import java.util.ArrayList;
-import java.util.Date;
+
 
 public abstract class Pet {
-    private String id;
+    private int id;
     private String name;
     private String birthDate;
-    private String type;
-    private ArrayList<String> commands;
+    private ArrayList commands;
 
-    public Pet(String id, String name, String birthDate, String type) {
+    public Pet(int id, String name, String birthDate) {
         this.id = id;
         this.name = name;
         this.birthDate = birthDate;
-        this.type = type;
+        this.commands = new ArrayList<>();
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -29,19 +29,24 @@ public abstract class Pet {
         return birthDate;
     }
 
-    public abstract String getType();
-
     public ArrayList<String> getCommands() {
         return commands;
     }
 
+    public void addCommand(String command) {
+        commands.add(command);
+    }
+
     @Override
     public String toString() {
-        return "{" +
-                "id='" + id + '\'' +
+        return "Питомец {" +
+                "id=" + id +
                 ", имя='" + name + '\'' +
-                ", дата рождения=" + birthDate +
-                ", категория='" + getType() + '\'' +
+                ", дата рождения='" + birthDate + '\'' +
+                ", команды=" + commands +
                 '}';
     }
+
+    // Абстрактный метод для получения категории питомца
+    public abstract String getCategory();
 }

@@ -1,37 +1,39 @@
 package registry;
 
-
-import factory.SimplePetFactory;
 import model.Pet;
 
+import java.awt.*;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class PetRegistry {
-    private final Map<String, Pet> pets = new HashMap<>();
-    private final CounterPets counter = new CounterPets();
+    private ArrayList<Pet> pets;
 
-
-    public void addPet (String name, String birthDate, String type) {
-        Pet animal = new SimplePetFactory().createPet(name, birthDate, type);
-        pets.put(animal.getId(), animal);
-        counter.addPetToCounter();
+    public PetRegistry() {
+        pets = new ArrayList<>();
     }
 
-    public ArrayList<Pet> getAllPets () {
-        return new ArrayList<>(pets.values());
+    public void addPet(Pet pet) {
+        pets.add(pet);
     }
 
-    public int showCounterPets() {
-        return counter.getCounter();
+    public void removePet(int id) {
+        pets.removeIf(pet -> pet.getId() == id);
     }
 
-    public void removePetById (String id) {
-        pets.remove(id);
-        counter.removePetFromCounter();
+    public ArrayList<Pet> getAllPets() {
+        return pets;
     }
 
+    public int getPetCount() {
+        return pets.size();
+    }
 
+    public Pet getPetById(int id) {
+        for (Pet pet : pets) {
+            if (pet.getId() == id) {
+                return pet;
+            }
+        }
+        return null;
+    }
 }

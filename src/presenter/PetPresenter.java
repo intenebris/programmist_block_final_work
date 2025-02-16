@@ -5,41 +5,54 @@ import model.Pet;
 import registry.PetRegistry;
 import view.PetView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class PetPresenter {
-    private final PetView view;
-    private final PetRegistry registry;
-    private final PetFactory factory;
+    private PetView view;
+    private PetRegistry registry;
 
-    public PetPresenter(PetView view, PetRegistry registry, PetFactory factory) {
+    public PetPresenter(PetView view, PetRegistry registry) {
         this.view = view;
         this.registry = registry;
-        this.factory = factory;
     }
 
-    public void addPet(String name, String birthDate, String type) {
-        try {
-            Pet pet = factory.createPet(name, birthDate, type);
-            registry.addPet(name, birthDate, type);
-            view.showMessage("Животное добавлено: " + pet);
-        } catch (IllegalArgumentException e) {
-            view.showMessage("Ошибка: " + e.getMessage());
+    public void start() {
+        while (true) {
+            view.showMenu();
+            int choice = view.getMenuChoice();
+
+            switch (choice) {
+                case 1:
+                    String[] details = view.getPetDetails();
+                    Pet pet = PetFactory.createPet(details[0], details[1], details[2]);
+                    registry.addPet(pet);
+                    view.showMessage("Питомец добавлен!");
+                    break;
+                case 2:
+                    int idToRemove = view.getPetId();
+                    registry.removePet(idToRemove);
+                    view.showMessage("Питомец удален!");
+                    break;
+                case 3:
+                    view.showAllPets(registry.getAllPets());
+                    break;
+                case 4:
+                    view.showPetCount(registry.getPetCount());
+                    break;
+                case 5:
+                    int idToAddCommand = view.getPetId();
+                    Pet petToAddCommand = registry.getPetById(idToAddCommand);
+                    if (petToAddCommand != null) {
+                        String command = view.getCommand();
+                        petToAddCommand.addCommand(command);
+                        view.showMessage("Команда добавлена!");
+                    } else {
+                        view.showMessage("Питомец с таким ID не найден!");
+                    }
+                    break;
+                case 6:
+                    return;
+                default:
+                    view.showMessage("Неверный выбор!");
+            }
         }
-    }
-
-    public void showAllPets() {
-        ArrayList<Pet> pets = registry.getAllPets();
-        view.showPets(pets);
-    }
-
-    public void showTotalNumberPets() {
-        registry.showCounterPets();
-    }
-
-    public void removePet(String id) {
-        registry.removePetById(id);
-        view.showMessage("Животное с ID: " + id + " удалено");
     }
 }
