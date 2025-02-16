@@ -1,16 +1,17 @@
 package model;
 
 import java.awt.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 
 public abstract class Pet {
     private int id;
     private String name;
-    private String birthDate;
+    private LocalDate birthDate;
     private ArrayList commands;
 
-    public Pet(int id, String name, String birthDate) {
+    public Pet(int id, String name, LocalDate birthDate) {
         this.id = id;
         this.name = name;
         this.birthDate = birthDate;
@@ -25,7 +26,7 @@ public abstract class Pet {
         return name;
     }
 
-    public String getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 

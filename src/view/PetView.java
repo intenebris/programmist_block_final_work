@@ -2,11 +2,15 @@ package view;
 
 import model.Pet;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PetView {
     private Scanner scanner;
+    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
     public PetView() {
         scanner = new Scanner(System.in);
@@ -32,11 +36,23 @@ public class PetView {
         scanner.nextLine(); // Очистка буфера
         System.out.print("Введите имя питомца: ");
         String name = scanner.nextLine();
-        System.out.print("Введите дату рождения питомца: ");
-        String birthDate = scanner.nextLine();
+
+        LocalDate birthDate = null;
+        boolean validDate = false;
+        while (!validDate) {
+            System.out.print("Введите дату рождения питомца (в формате dd-MM-yyyy): ");
+            String birthDateStr = scanner.nextLine();
+            try {
+                birthDate = LocalDate.parse(birthDateStr, DATE_FORMATTER);
+                validDate = true;
+            } catch (DateTimeParseException e) {
+                System.out.println("Ошибка: Неверный формат даты. Пожалуйста, введите дату в формате dd-MM-yyyy.");
+            }
+        }
+
         System.out.print("Введите категорию питомца (собака, кошка, хомяк): ");
         String category = scanner.nextLine();
-        return new String[]{name, birthDate, category};
+        return new String[]{name, birthDate.format(DATE_FORMATTER), category};
     }
 
     public int getPetId() {

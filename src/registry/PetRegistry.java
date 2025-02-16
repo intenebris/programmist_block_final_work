@@ -38,10 +38,9 @@ public class PetRegistry {
         return null;
     }
 
-    // Метод для сортировки питомцев по дате рождения
     public ArrayList<Pet> getPetsSortedByBirthDate() {
         ArrayList<Pet> sortedPets = new ArrayList<>(pets);
-        sortedPets.sort(Comparator.comparing(Pet::getBirthDate));
+        sortedPets.sort(Comparator.comparing(Pet::getBirthDate)); // Сортировка по LocalDate
         return sortedPets;
     }
 }
